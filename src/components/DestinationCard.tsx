@@ -47,6 +47,8 @@ export const DestinationCard: React.FC<DestinationCardProps> = ({
         source={{ uri: destination.image }}
         style={styles.image}
         resizeMode="cover"
+        onError={(error) => console.log('Image load error:', destination.name, error.nativeEvent.error)}
+        onLoad={() => console.log('Image loaded:', destination.name)}
       />
       
       <TouchableOpacity
